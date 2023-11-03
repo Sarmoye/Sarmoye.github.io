@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Question</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* CSS pour la partie du mot de passe */
+        #password {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ff69b4;
+            border-radius: 5px;
+            background-color: rgba(255, 105, 180, 0.2);
+            color: #fff;
+            font-size: 16px;
+        }
+
+        #passwordSubmit, #question {
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        #passwordSubmit:hover {
+            background-color: #ff1493; /* Changement de couleur au survol */
+        }
+
+        #message {
+            display: none;
+            animation: fade-in 2s ease-in-out forwards;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Une Question Spéciale pour Destinie</h1>
+    <p>Entre le mot de passe pour découvrir la question :</p>
+    <input type="password" id="password">
+    <button id="passwordSubmit" onclick="checkPassword()">Valider</button>
+
+    <div id="message">
+        <h2>Destinie,</h2>
+        <p>Je voulais te dire combien tu es spéciale pour moi. J'admire tellement <br> [Décrivez ce que vous aimez chez elle] et j'ai beaucoup de chance de te connaître.</p>
+        <p>Après avoir partagé ce moment avec toi, il me reste une question importante :</p>
+        <button id="question" onclick="popTheQuestion()">Clique ici</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "je veux être heureux avec toi comme nous") {
+                document.getElementById("message").style.display = "block";
+                document.getElementById("password").style.display = "none";
+                document.getElementById("passwordSubmit").style.display = "none";
+            } else {
+                alert("Mot de passe incorrect. Réessayez !");
+            }
+        }
+
+        function popTheQuestion() {
+            var questionButton = document.querySelector("button");
+            questionButton.style.display = "none";
+            confirm("Destinie, veux-tu devenir ma petite amie ?");
+        }
+    </script>
+</body>
+</html>
